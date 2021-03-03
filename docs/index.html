@@ -111,18 +111,28 @@
             </div>
 
 
-    <div class="index-list-wrapper">
+
+        <div class="index-list-wrapper">
             <div class="count-wrapper">
                 <p class="govuk-body" aria-hidden="true">Showing <span class="js-list-count">9</span> records.</p>
                 <p class="govuk-visually-hidden">There are
                     <span class="js-accessible-list-count">9</span>
                     records listed.
                 </p>
+            </div>        <form action="" class="govuk-form govuk-!-margin-bottom-4 dl-historical-toggle-form js-hidden" data-historical="form">
+            <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="hsitorical" name="hsitorical" type="checkbox" value="show">
+                    <label class="govuk-label govuk-checkboxes__label" for="hsitorical">
+                    Show historical records
+                    </label>
+                </div>
             </div>
-
-            <table class="dl-index-list" data-filter="list">
+        </form>
+<table class="dl-index-list"
+ data-filter="list" data-historical='list'>
   <tbody>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./all-other-types" data-filter="match-content">all-other-types</a>
@@ -132,7 +142,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">all other types</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./area-action-plan" data-filter="match-content">area-action-plan</a>
@@ -142,7 +152,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Area Action Plan</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./core-strategy" data-filter="match-content">core-strategy</a>
@@ -152,7 +162,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Core Strategy</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./development-management" data-filter="match-content">development-management</a>
@@ -162,7 +172,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Development Management</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./local-plan" data-filter="match-content">local-plan</a>
@@ -172,7 +182,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Local Plan</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./minerals-waste" data-filter="match-content">minerals-waste</a>
@@ -182,7 +192,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Minerals &amp; Waste</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./neighbourhood-plan" data-filter="match-content">neighbourhood-plan</a>
@@ -192,7 +202,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Neighbourhood Plan</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./partial-review" data-filter="match-content">partial-review</a>
@@ -202,7 +212,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Partial Review</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./site-allocations" data-filter="match-content">site-allocations</a>
@@ -214,8 +224,8 @@
 </tr></tbody>
 </table>
 
+        </div>
 
-    </div>
 
         </main>
       </div>
@@ -297,6 +307,15 @@
 
 
 
+        <script>
+            const showCounts = true
+            const $hist = document.querySelector('[data-historical="form"]');
+            new window.DLFrontend.FilterHistorical($hist).init({
+                triggerEvents: "list:filtered",
+                listWrapperSelector: '.index-list-wrapper',
+                showCountsWhenShowingAll: showCounts
+            })
+        </script>
 
   </body>
 </html>
