@@ -124,7 +124,7 @@
                 </a>
             </li><li class="dlf-subnav__list-item">
                 <a class="dlf-subnav__list-item__link" href="#referenced-by" data-module-sub-nav="tab">
-                8 References
+                7 References
                 </a>
             </li>
         </ul>
@@ -134,13 +134,13 @@
 <div class="govuk-grid-row">    <div class="govuk-grid-column-two-thirds"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/development-plan-type/minerals-plan</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2021-03-29            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">development-plan-type
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">minerals-plan</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2021-03-29            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">name
             </dt>
@@ -175,8 +175,8 @@
             <th>resource</th>
             <th>line</th>
             <th>development-plan-type</th>
-            <th>name</th>
             <th>start-date</th>
+            <th>name</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -184,8 +184,8 @@
             <td><a href="https://github.com/digital-land/development-plan-type-collection/tree/main/transformed/development-plan-type/d4cd3017668c5548df11cecd4345cee90e81cf3b6e98ebab0cab61dac82e748d.csv#L11">d4cd3017668c...</a></td>
             <td>10</td>
                 <td>minerals-plan</td> 
-                <td>Minerals plan</td> 
                 <td>2021-03-29</td> 
+                <td>Minerals plan</td> 
         </tr>    </tbody>
 </table>
 
@@ -196,39 +196,35 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-m dlf-subnav__heading">Referenced by</h2>
-            <p class="govuk-body">This record is referenced by 8 other planning related data records.</p>
+            <p class="govuk-body">This record is referenced by 7 other planning related data records.</p>
             <h3 class="govuk-heading-s">Document</h3>
             <ul class="govuk-list govuk-list--bullet">                <li>
-                    <a href=/development-plan-document/local-authority-eng/BUC/dev-plan-buc-bmwlp>Buckinghamshire Minerals and Waste Local Plan 2016-2036</a>
-                    <span class="secondary-text data-reference">(dev-plan-buc-bmwlp)</span>
-                </li>
-                <li>
-                    <a href=/development-plan-document/local-authority-eng/DEV/mineral-plan-dev-xyz>Devon Minerals Plans</a>
-                    <span class="secondary-text data-reference">(mineral-plan-dev-xyz)</span>
-                </li>
-                <li>
-                    <a href=/development-plan-document/local-authority-eng/CON/mineral-safeguarding-dev-plan-con-xyz>Mineral Safeguarding Development Plan Document</a>
-                    <span class="secondary-text data-reference">(mineral-safeguarding-dev-plan-con-xyz)</span>
-                </li>
-                <li>
                     <a href=/development-plan-document/local-authority-eng/BPC/mineral-site-plan-bpc-xyz>Mineral Sites Plan 2019</a>
-                    <span class="secondary-text data-reference">(mineral-site-plan-bpc-xyz)</span>
-                </li>
-                <li>
-                    <a href=/development-plan-document/local-authority-eng/GLS/mineral-local-plan-gls-xyz>Minerals Local Plan for Gloucestershire</a>
-                    <span class="secondary-text data-reference">(mineral-local-plan-gls-xyz)</span>
+                    <span class="secondary-text data-reference">(5)</span>
                 </li>
                 <li>
                     <a href=/development-plan-document/local-authority-eng/BPC/mineral-strategy-bpc-xyz>Minerals Strategy</a>
-                    <span class="secondary-text data-reference">(mineral-strategy-bpc-xyz)</span>
+                    <span class="secondary-text data-reference">(6)</span>
+                </li>
+                <li>
+                    <a href=/development-plan-document/local-authority-eng/CON/mineral-safeguarding-dev-plan-con-xyz>Mineral Safeguarding Development Plan Document</a>
+                    <span class="secondary-text data-reference">(21)</span>
+                </li>
+                <li>
+                    <a href=/development-plan-document/local-authority-eng/DEV/mineral-plan-dev-xyz>Devon Minerals Plans</a>
+                    <span class="secondary-text data-reference">(22)</span>
+                </li>
+                <li>
+                    <a href=/development-plan-document/local-authority-eng/GLS/mineral-local-plan-gls-xyz>Minerals Local Plan for Gloucestershire</a>
+                    <span class="secondary-text data-reference">(24)</span>
                 </li>
                 <li>
                     <a href=/development-plan-document/local-authority-eng/SOM/mineral-plan-som-xyz>Somerset Minerals Plan</a>
-                    <span class="secondary-text data-reference">(mineral-plan-som-xyz)</span>
+                    <span class="secondary-text data-reference">(31)</span>
                 </li>
                 <li>
                     <a href=/development-plan-document/local-authority-eng/SWS;local-authority-eng/WIL/min-dev-strat-sws-wil-xyz>Wiltshire and Swindon minerals development core strategy</a>
-                    <span class="secondary-text data-reference">(min-dev-strat-sws-wil-xyz)</span>
+                    <span class="secondary-text data-reference">(41)</span>
                 </li>
 </ul>
 </div>
@@ -334,7 +330,7 @@
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()
             const zoom = mapComponent.map.getZoom()
-            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            let url = `http://digital-land.github.io/map?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
             console.log(url)
             if ($nationalMapLink) {
                 // only show this for the datasets we've added to the national map
